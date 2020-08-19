@@ -11,17 +11,26 @@ class API
    @key = "0c6516a939311eb7559a5339e3009c30" 
   end 
   
-  def genre_movie_url 
-  url = "https://api.themoviedb.org/3/genre/movie/list?api_key=#{@key}&language=en-US"
+  def popular_movie_url 
+  url = "https://api.themoviedb.org/3/movie/popular?api_key=#{@key}&language=en-US&page=1"
   response = Net::HTTP.get(url)
-  response["genres"].each do |genre|
-    id = genre["id"]
-    binding.pry
-    name = genre["name"]
-    Movie.new(name, id)
+  response["movies"].each do |movie|
+    id = movie["id"]
+    name = movie["title"]
+    overview = movie["overview"]
+    Movie.new(name, id, overview)
   end 
 end 
   
-   
+  def popular_tv_show 
+    url = "https://api.themoviedb.org/3/tv/popular?api_key=#{@key}&language=en-US&page=1"
+    response = Net::HTTP.get(url)
+    response["shows"].each do |show|
+    id = show["id"]
+    name = show["title"]
+    overview = show["overview"]
+    TvShow.new(name, id, overview)
+  end 
+end
   
 end 

@@ -2,4 +2,4 @@
 
 require "./lib/environment"
 
-API.new.url
+
