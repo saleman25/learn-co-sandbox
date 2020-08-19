@@ -2,4 +2,4 @@
 
 require "./project/lib/environment"
 
-CLI.new.start
+API.new.url
