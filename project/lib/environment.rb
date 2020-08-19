@@ -1,7 +1,7 @@
 
-require "./project/lib/api"
-require "./project/lib/cli"
-require "./project/lib/movie"
-require "./project/lib/genre"
+require "./lib/api"
+require "./lib/cli"
+require "./lib/movie"
+require "./lib/genre"
 
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require "./project/lib/environment"
+require "./lib/environment"
 
 API.new.url
