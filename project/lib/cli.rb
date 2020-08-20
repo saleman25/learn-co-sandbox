@@ -2,6 +2,7 @@ class CLI
   
   def start 
     puts "Hi Welcome"
+    API.new.popular_movie_url
   end 
  
  def options 
