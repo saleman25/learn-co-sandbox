@@ -18,6 +18,7 @@ class API
     id = movie["id"]
     name = movie["title"]
     overview = movie["overview"]
+    binding.pry
     Movie.new(name, id, overview)
   end 
 end 
