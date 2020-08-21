@@ -4,7 +4,9 @@ class Movie
   
   @@all = []
   
-  def initialize
+  def initialize(title, id)
+    @title = title 
+    @id = id
     @@all << self
   end 
   
@@ -12,9 +14,7 @@ class Movie
     @@all
   end 
   
-  def movie(title, id, overview)
-  self.title = title
-  self.id = id
+  def details(overview)
   self.overview = overview 
 end
   
