@@ -4,7 +4,7 @@ class TvShow
   
 @@all = []
 
-def initialize
+def initialize(title, id)
   @title = title
   @id = id 
   @@all << self
@@ -13,6 +13,7 @@ end
 def self.all
   @all 
 end 
+
 
 def show(overview)
   self.overview = overview 

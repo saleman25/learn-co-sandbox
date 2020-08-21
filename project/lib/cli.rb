@@ -1,38 +1,97 @@
 class CLI 
   
+  attr_accessor :api , :movie , :tvshow
+  
   def call 
-    
-    input = "" 
-    
-    while input != "exit"
-    puts "Hi welcome!"
-    puts "Please select movie or TV show."
-    puts "Enter movie id for an overview"
-    puts "Enter TV show id for an overview"
-    
-    case input
-    when "Please select movie or TV show."
-      #the user would have to type in movie or tv show 
-    when "Enter movie id for an overview"
-      pop_movie_details(movie)
-    when "Enter TV show id for an overview"  
-      pop_show_details(show)
+    start 
+  end 
+  
+  def start 
+   input = "" 
+   puts "Hi Welcome!" 
+   puts "*~*~*~*~*~*"
+   sleep(1)
+   puts "Please enter movie or tv show to view options"
+   puts "*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*"
    
-   while input = "exit"
-   puts exit_message
+   input = gets.strip
+   @api = API.new
+   if input == "movie"
+     @api.popular_movie_url
+     list_movies
+   elsif input == "tv show"  
+     @api.popular_tv_show_url
+     list_tv_shows
+   elsif input =="exit"
+     exit_message 
+   else 
+     wrong_input
+     start 
+end 
+end 
+end 
+
+def list_movies
+    Movie.all.each.with_index do |m, i|
+      sleep(0.3)
+      puts "#{i+1}. #{m.title}." 
+    end
+  end
+  
+def list_tv_shows
+    TvShow.all.each.with_index do |m, i|
+      sleep(0.3)
+      puts "#{i+1}. #{m.title}. " 
+    end
+  end
+  
+ 
+  
+    
+  def overview_message
+    puts "For an overview please enter the corresponding ID number"
   end 
-  end 
-  end   
+  
+  def exit_message
+    sleep(1)
+    puts ""
+    puts "*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*"
+    puts "thank you! enjoy your day! bye bye!"
+    puts "*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*"
+   end 
+  
+  def wrong_input
+    sleep(2)
+    puts ''
+    puts "*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~"
+    puts "Sorry I didn't quite get that, please enter a valid input."
+    puts "*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~"
+    puts ""
+    sleep(3)
   end 
  
  def display_movie
+   sleep(1)
+   puts "****************************"
    puts "Movie Name: #{movie.title}"
+   puts "---------------------------"
+   sleep(1)
    puts "Overview: #{movie.overview}"
+   puts "---------------------------"
+   puts "****************************"
+   sleep(1)
  end 
  
  def display_tv_show
+   sleep(1)
+   puts "****************************"
    puts "Tv Show Name: #{show.title}"
+   puts "---------------------------"
+   sleep(1)
    puts "Overview: #{show.overview}"
+   puts "---------------------------"
+   puts "****************************"
+   sleep(1)
  end 
  
 
@@ -40,4 +99,4 @@ class CLI
  
  
 
-end 
+ 

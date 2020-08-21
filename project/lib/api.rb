@@ -28,7 +28,7 @@ end
    
  end 
   
-  def popular_tv_show 
+  def popular_tv_show_url 
     url = "https://api.themoviedb.org/3/tv/popular?api_key=#{@@key}&language=en-US&page=1"
     response = HTTParty.get(url)
     response["results"].each do |show|
