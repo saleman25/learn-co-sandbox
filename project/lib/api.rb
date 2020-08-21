@@ -28,21 +28,5 @@ end
    
  end 
   
-  def popular_tv_show_url 
-    url = "https://api.themoviedb.org/3/tv/popular?api_key=#{@@key}&language=en-US&page=1"
-    response = HTTParty.get(url)
-    response["results"].each do |show|
-    id = show["id"]
-    title = show["name"]
-    TvShow.new(title, id)
-  end 
-end
 
-  def pop_show_details(show)
-   tv_id = show 
-   url = "https://api.themoviedb.org/3/tv/#{tv_id}?api_key=#{@@key}&language=en-US"
-   response = HTTParty.get(url)
-   overview = response["overview"]
-   
-  end
 end 
