@@ -3,29 +3,41 @@ class CLI
   def call 
     
     input = "" 
-  
-  #def start 
-   # puts "Hi Welcome"
-   # API.new.pop_show_details("2734")
- # end 
+    
+    while input != "exit"
+    puts "Hi welcome!"
+    puts "Please select movie or TV show."
+    puts "Enter movie id for an overview"
+    puts "Enter TV show id for an overview"
+    
+    case input
+    when "Please select movie or TV show."
+      #the user would have to type in movie or tv show 
+    when "Enter movie id for an overview"
+      pop_movie_details(movie)
+    when "Enter TV show id for an overview"  
+      pop_show_details(show)
+   
+   while input = "exit"
+   puts exit_message
+  end 
+  end 
+  end   
+  end 
  
- #def options 
-  # puts "Hi please select movie or tv show"
-   #has the option movie or tv show
- #end 
+ def display_movie
+   puts "Movie Name: #{movie.title}"
+   puts "Overview: #{movie.overview}"
+ end 
  
- #def option_move 
-  # puts "select a movie to read the overview"
-   #once movie has been selected a list will show w the most popular and then they chose which one
-# end 
+ def display_tv_show
+   puts "Tv Show Name: #{show.title}"
+   puts "Overview: #{show.overview}"
+ end 
  
-# def option_show
- #  puts "select a show to read the overview"
-   #once they select show a list will show the most popular shows
-# end 
+
  
-# def exit_message
- #  puts "thank you! enjoy your selection!"
- #end 
  
+ 
+
 end 
