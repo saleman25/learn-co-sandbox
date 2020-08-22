@@ -20,13 +20,13 @@ class API
 end 
   
   def pop_movie_details(movie)
-   movie_id = movie 
+   movie_id = movie.id 
    url = "https://api.themoviedb.org/3/movie/#{movie_id}?api_key=#{@@key}&language=en-US"
    response = HTTParty.get(url)
    overview = response["overview"]
-   
+   movie.details(overview)
    
  end 
   
 
-end 
+end
