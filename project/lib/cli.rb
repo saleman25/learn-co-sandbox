@@ -81,6 +81,7 @@ end
     puts ""
     puts "*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*"
     puts "thank you! enjoy your day! bye bye!"
+    puts "             ♡ʕ•ᴥ•ʔ♡               "
     puts "*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*"
    end 
   
@@ -107,7 +108,7 @@ end
  end 
  
  def anything_else
-   sleep(1)
+   sleep(2)
    input = ""
    puts ""
    puts "*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~"
