@@ -1,8 +1,6 @@
-# Project
+# My CLI Project
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/project`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem provides a list of the top 20 popular films as of right now according to the Movie Database website (https://www.themoviedb.org). 
 
 ## Installation
 
@@ -22,7 +20,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To run this app, you must :
+
+
+$ cd project
+
+$ bundle install
+
+$ ruby bin/run
 
 ## Development
 
