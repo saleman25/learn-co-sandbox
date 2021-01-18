@@ -17,6 +17,7 @@ class API
     title = movie["title"]
     Movie.new(title, id)
   end 
+  
 end 
   
   def pop_movie_details(movie)
